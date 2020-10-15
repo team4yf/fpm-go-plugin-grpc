@@ -1,0 +1,17 @@
+syntax = "proto3";
+package biz;
+
+message BizRequest {
+  string name = 1;
+  string param = 2;
+}
+
+message BizResponse {
+  string data = 1; 
+  int32 errno = 2;
+  string message = 3;
+}
+
+service BizService {
+  rpc Execute(BizRequest) returns (BizResponse) {}
+}
